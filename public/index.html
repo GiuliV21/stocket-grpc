@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear y Autenticar Usuario</title>
+</head>
+<body>
+  <h1>Crear Usuario</h1>
+  <form id="crear-usuario-form">
+    <label for="nombre_usuario">Nombre de Usuario:</label>
+    <input type="text" id="nombre_usuario" required><br>
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" required><br>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" required><br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" required><br>
+    <label for="tienda">Tienda:</label>
+    <input type="text" id="tienda" required><br>
+    <button type="submit">Crear Usuario</button>
+  </form>
+
+  <h1>Autenticar Usuario</h1>
+  <form id="autenticar-usuario-form">
+    <label for="auth_nombre_usuario">Nombre de Usuario:</label>
+    <input type="text" id="auth_nombre_usuario" required><br>
+    <label for="auth_contrasena">Contraseña:</label>
+    <input type="password" id="auth_contrasena" required><br>
+    <button type="submit">Autenticar Usuario</button>
+  </form>
+
+  <script>
+    // Function to handle user creation
+    document.getElementById('crear-usuario-form').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const nombre_usuario = document.getElementById('nombre_usuario').value;
+      const contrasena = document.getElementById('contrasena').value;
+      const nombre = document.getElementById('nombre').value;
+      const apellido = document.getElementById('apellido').value;
+      const tienda = document.getElementById('tienda').value;
+
+      const response = await fetch('/crear-usuario', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre_usuario, contrasena, nombre, apellido, tienda }),
+      });
+
+      const result = await response.json();
+      alert(result.mensaje);
+    });
+
+    // Function to handle user authentication
+    document.getElementById('autenticar-usuario-form').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const nombre_usuario = document.getElementById('auth_nombre_usuario').value;
+      const contrasena = document.getElementById('auth_contrasena').value;
+
+      const response = await fetch('/autenticar-usuario', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre_usuario, contrasena }),
+      });
+
+      const result = await response.json();
+      alert(result.mensaje);
+    });
+  </script>
+</body>
+</html>
