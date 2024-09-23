@@ -2,6 +2,11 @@
   "dependencies": {
     "@grpc/grpc-js": "^1.11.3",
     "@grpc/proto-loader": "^0.7.13",
+<<<<<<< HEAD
     "express": "^4.21.0"
+=======
+    "express": "^4.21.0",
+    "grpc-tools": "^1.12.4"
+>>>>>>> c2d94035c4c3454ef9685d30d696cbabe74cbcf0
   }
 }
