@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Stock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gestión de Stock</h1>
+
+    <div>
+        <h2>Crear Tienda</h2>
+        <input id="tiendaCodigo" placeholder="Código de Tienda">
+        <input id="tiendaDireccion" placeholder="Dirección">
+        <input id="tiendaCiudad" placeholder="Ciudad">
+        <input id="tiendaProvincia" placeholder="Provincia">
+        <button onclick="crearTienda()">Crear Tienda</button>
+    </div>
+
+    <div>
+        <h2>Crear Usuario</h2>
+        <input id="usuarioNombre" placeholder="Nombre de Usuario">
+        <input id="usuarioContrasena" placeholder="Contraseña">
+        <input id="usuarioNombreReal" placeholder="Nombre">
+        <input id="usuarioApellido" placeholder="Apellido">
+        <input id="usuarioTienda" placeholder="Código de Tienda">
+        <button onclick="crearUsuario()">Crear Usuario</button>
+    </div>
+
+    <div>
+        <h2>Crear Producto</h2>
+        <input id="productoNombre" placeholder="Nombre del Producto">
+        <input id="productoCodigo" placeholder="Código">
+        <input id="productoTalle" placeholder="Talle">
+        <input id="productoColor" placeholder="Color">
+        <input id="productoStock" placeholder="Stock">
+        <button onclick="crearProducto()">Crear Producto</button>
+    </div>
+
+    <div>
+        <h2>Buscar Productos</h2>
+        <input id="busquedaProducto" placeholder="Nombre del Producto">
+        <button onclick="buscarProductos()">Buscar</button>
+    </div>
+
+    <div id="resultados"></div>
+
+    <script src="clienteNode.js"></script>
+</body>
+</html>
