@@ -11,6 +11,7 @@ service StockearteService {
   // Métodos para gestionar tiendas
   rpc CrearTienda (TiendaRequest) returns (TiendaResponse);
   rpc ModificarTienda (ModificarTiendaRequest) returns (TiendaResponse);
+  rpc AlternarHabilitadaTienda (AlternarHabilitadaRequest) returns (TiendaResponse);
 
   // Métodos para gestionar productos
   rpc CrearProducto (ProductoRequest) returns (ProductoResponse);
@@ -75,6 +76,10 @@ message ModificarTiendaRequest {
   bool habilitada = 5;
 }
 
+message AlternarHabilitadaRequest {
+  string codigo = 1;
+}
+
 // Mensajes para productos
 message ProductoRequest {
   string nombre = 1;
@@ -86,6 +91,7 @@ message ProductoRequest {
 
 message ProductoResponse {
   string mensaje = 1;
+  string codigo = 2;
 }
 
 message ModificarProductoRequest {

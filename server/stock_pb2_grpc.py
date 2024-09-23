@@ -59,6 +59,11 @@ class StockearteServiceStub(object):
                 request_serializer=stock__pb2.ModificarTiendaRequest.SerializeToString,
                 response_deserializer=stock__pb2.TiendaResponse.FromString,
                 _registered_method=True)
+        self.AlternarHabilitadaTienda = channel.unary_unary(
+                '/stock.StockearteService/AlternarHabilitadaTienda',
+                request_serializer=stock__pb2.AlternarHabilitadaRequest.SerializeToString,
+                response_deserializer=stock__pb2.TiendaResponse.FromString,
+                _registered_method=True)
         self.CrearProducto = channel.unary_unary(
                 '/stock.StockearteService/CrearProducto',
                 request_serializer=stock__pb2.ProductoRequest.SerializeToString,
@@ -121,6 +126,12 @@ class StockearteServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ModificarTienda(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AlternarHabilitadaTienda(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -190,6 +201,11 @@ def add_StockearteServiceServicer_to_server(servicer, server):
             'ModificarTienda': grpc.unary_unary_rpc_method_handler(
                     servicer.ModificarTienda,
                     request_deserializer=stock__pb2.ModificarTiendaRequest.FromString,
+                    response_serializer=stock__pb2.TiendaResponse.SerializeToString,
+            ),
+            'AlternarHabilitadaTienda': grpc.unary_unary_rpc_method_handler(
+                    servicer.AlternarHabilitadaTienda,
+                    request_deserializer=stock__pb2.AlternarHabilitadaRequest.FromString,
                     response_serializer=stock__pb2.TiendaResponse.SerializeToString,
             ),
             'CrearProducto': grpc.unary_unary_rpc_method_handler(
@@ -357,6 +373,33 @@ class StockearteService(object):
             target,
             '/stock.StockearteService/ModificarTienda',
             stock__pb2.ModificarTiendaRequest.SerializeToString,
+            stock__pb2.TiendaResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def AlternarHabilitadaTienda(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/stock.StockearteService/AlternarHabilitadaTienda',
+            stock__pb2.AlternarHabilitadaRequest.SerializeToString,
             stock__pb2.TiendaResponse.FromString,
             options,
             channel_credentials,

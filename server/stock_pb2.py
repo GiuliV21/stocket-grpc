@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bstock.proto\x12\x05stock\"n\n\x0eUsuarioRequest\x12\x16\n\x0enombre_usuario\x18\x01 \x01(\t\x12\x12\n\ncontrasena\x18\x02 \x01(\t\x12\x0e\n\x06nombre\x18\x03 \x01(\t\x12\x10\n\x08\x61pellido\x18\x04 \x01(\t\x12\x0e\n\x06tienda\x18\x05 \x01(\t\"\"\n\x0fUsuarioResponse\x12\x0f\n\x07mensaje\x18\x01 \x01(\t\"\x8b\x01\n\x17ModificarUsuarioRequest\x12\x16\n\x0enombre_usuario\x18\x01 \x01(\t\x12\x12\n\ncontrasena\x18\x02 \x01(\t\x12\x0e\n\x06nombre\x18\x03 \x01(\t\x12\x10\n\x08\x61pellido\x18\x04 \x01(\t\x12\x0e\n\x06tienda\x18\x05 \x01(\t\x12\x12\n\nhabilitado\x18\x06 \x01(\x08\":\n\x0cLoginRequest\x12\x16\n\x0enombre_usuario\x18\x01 \x01(\t\x12\x12\n\ncontrasena\x18\x02 \x01(\t\" \n\rLoginResponse\x12\x0f\n\x07mensaje\x18\x01 \x01(\t\"i\n\rTiendaRequest\x12\x0e\n\x06\x63odigo\x18\x01 \x01(\t\x12\x11\n\tdireccion\x18\x02 \x01(\t\x12\x0e\n\x06\x63iudad\x18\x03 \x01(\t\x12\x11\n\tprovincia\x18\x04 \x01(\t\x12\x12\n\nhabilitada\x18\x05 \x01(\x08\"!\n\x0eTiendaResponse\x12\x0f\n\x07mensaje\x18\x01 \x01(\t\"r\n\x16ModificarTiendaRequest\x12\x0e\n\x06\x63odigo\x18\x01 \x01(\t\x12\x11\n\tdireccion\x18\x02 \x01(\t\x12\x0e\n\x06\x63iudad\x18\x03 \x01(\t\x12\x11\n\tprovincia\x18\x04 \x01(\t\x12\x12\n\nhabilitada\x18\x05 \x01(\x08\"^\n\x0fProductoRequest\x12\x0e\n\x06nombre\x18\x01 \x01(\t\x12\x0e\n\x06\x63odigo\x18\x02 \x01(\t\x12\r\n\x05talle\x18\x03 \x01(\t\x12\r\n\x05\x63olor\x18\x04 \x01(\t\x12\r\n\x05stock\x18\x05 \x01(\x05\"#\n\x10ProductoResponse\x12\x0f\n\x07mensaje\x18\x01 \x01(\t\"g\n\x18ModificarProductoRequest\x12\x0e\n\x06nombre\x18\x01 \x01(\t\x12\x0e\n\x06\x63odigo\x18\x02 \x01(\t\x12\r\n\x05talle\x18\x03 \x01(\t\x12\r\n\x05\x63olor\x18\x04 \x01(\t\x12\r\n\x05stock\x18\x05 \x01(\x05\"#\n\x11ProductoIdRequest\x12\x0e\n\x06\x63odigo\x18\x01 \x01(\t\"V\n\x16\x42uscarProductosRequest\x12\x0e\n\x06nombre\x18\x01 \x01(\t\x12\x0e\n\x06\x63odigo\x18\x02 \x01(\t\x12\r\n\x05talle\x18\x03 \x01(\t\x12\r\n\x05\x63olor\x18\x04 \x01(\t\"=\n\x17\x42uscarProductosResponse\x12\"\n\tproductos\x18\x01 \x03(\x0b\x32\x0f.stock.Producto\"W\n\x08Producto\x12\x0e\n\x06nombre\x18\x01 \x01(\t\x12\x0e\n\x06\x63odigo\x18\x02 \x01(\t\x12\r\n\x05talle\x18\x03 \x01(\t\x12\r\n\x05\x63olor\x18\x04 \x01(\t\x12\r\n\x05stock\x18\x05 \x01(\x05\"?\n\x15\x42uscarUsuariosRequest\x12\x16\n\x0enombre_usuario\x18\x01 \x01(\t\x12\x0e\n\x06tienda\x18\x02 \x01(\t\":\n\x16\x42uscarUsuariosResponse\x12 \n\x08usuarios\x18\x01 \x03(\x0b\x32\x0e.stock.Usuario\"g\n\x07Usuario\x12\x16\n\x0enombre_usuario\x18\x01 \x01(\t\x12\x0e\n\x06nombre\x18\x02 \x01(\t\x12\x10\n\x08\x61pellido\x18\x03 \x01(\t\x12\x0e\n\x06tienda\x18\x04 \x01(\t\x12\x12\n\nhabilitado\x18\x05 \x01(\x08\":\n\x14\x42uscarTiendasRequest\x12\x0e\n\x06\x63odigo\x18\x01 \x01(\t\x12\x12\n\nhabilitada\x18\x02 \x01(\x08\"7\n\x15\x42uscarTiendasResponse\x12\x1e\n\x07tiendas\x18\x01 \x03(\x0b\x32\r.stock.Tienda\"b\n\x06Tienda\x12\x0e\n\x06\x63odigo\x18\x01 \x01(\t\x12\x11\n\tdireccion\x18\x02 \x01(\t\x12\x0e\n\x06\x63iudad\x18\x03 \x01(\t\x12\x11\n\tprovincia\x18\x04 \x01(\t\x12\x12\n\nhabilitada\x18\x05 \x01(\x08\x32\xa8\x06\n\x11StockearteService\x12=\n\x0c\x43rearUsuario\x12\x15.stock.UsuarioRequest\x1a\x16.stock.UsuarioResponse\x12>\n\x11\x41utenticarUsuario\x12\x13.stock.LoginRequest\x1a\x14.stock.LoginResponse\x12J\n\x10ModificarUsuario\x12\x1e.stock.ModificarUsuarioRequest\x1a\x16.stock.UsuarioResponse\x12:\n\x0b\x43rearTienda\x12\x14.stock.TiendaRequest\x1a\x15.stock.TiendaResponse\x12G\n\x0fModificarTienda\x12\x1d.stock.ModificarTiendaRequest\x1a\x15.stock.TiendaResponse\x12@\n\rCrearProducto\x12\x16.stock.ProductoRequest\x1a\x17.stock.ProductoResponse\x12M\n\x11ModificarProducto\x12\x1f.stock.ModificarProductoRequest\x1a\x17.stock.ProductoResponse\x12\x45\n\x10\x45liminarProducto\x12\x18.stock.ProductoIdRequest\x1a\x17.stock.ProductoResponse\x12P\n\x0f\x42uscarProductos\x12\x1d.stock.BuscarProductosRequest\x1a\x1e.stock.BuscarProductosResponse\x12M\n\x0e\x42uscarUsuarios\x12\x1c.stock.BuscarUsuariosRequest\x1a\x1d.stock.BuscarUsuariosResponse\x12J\n\rBuscarTiendas\x12\x1b.stock.BuscarTiendasRequest\x1a\x1c.stock.BuscarTiendasResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bstock.proto\x12\x05stock\"n\n\x0eUsuarioRequest\x12\x16\n\x0enombre_usuario\x18\x01 \x01(\t\x12\x12\n\ncontrasena\x18\x02 \x01(\t\x12\x0e\n\x06nombre\x18\x03 \x01(\t\x12\x10\n\x08\x61pellido\x18\x04 \x01(\t\x12\x0e\n\x06tienda\x18\x05 \x01(\t\"\"\n\x0fUsuarioResponse\x12\x0f\n\x07mensaje\x18\x01 \x01(\t\"\x8b\x01\n\x17ModificarUsuarioRequest\x12\x16\n\x0enombre_usuario\x18\x01 \x01(\t\x12\x12\n\ncontrasena\x18\x02 \x01(\t\x12\x0e\n\x06nombre\x18\x03 \x01(\t\x12\x10\n\x08\x61pellido\x18\x04 \x01(\t\x12\x0e\n\x06tienda\x18\x05 \x01(\t\x12\x12\n\nhabilitado\x18\x06 \x01(\x08\":\n\x0cLoginRequest\x12\x16\n\x0enombre_usuario\x18\x01 \x01(\t\x12\x12\n\ncontrasena\x18\x02 \x01(\t\" \n\rLoginResponse\x12\x0f\n\x07mensaje\x18\x01 \x01(\t\"i\n\rTiendaRequest\x12\x0e\n\x06\x63odigo\x18\x01 \x01(\t\x12\x11\n\tdireccion\x18\x02 \x01(\t\x12\x0e\n\x06\x63iudad\x18\x03 \x01(\t\x12\x11\n\tprovincia\x18\x04 \x01(\t\x12\x12\n\nhabilitada\x18\x05 \x01(\x08\"!\n\x0eTiendaResponse\x12\x0f\n\x07mensaje\x18\x01 \x01(\t\"r\n\x16ModificarTiendaRequest\x12\x0e\n\x06\x63odigo\x18\x01 \x01(\t\x12\x11\n\tdireccion\x18\x02 \x01(\t\x12\x0e\n\x06\x63iudad\x18\x03 \x01(\t\x12\x11\n\tprovincia\x18\x04 \x01(\t\x12\x12\n\nhabilitada\x18\x05 \x01(\x08\"+\n\x19\x41lternarHabilitadaRequest\x12\x0e\n\x06\x63odigo\x18\x01 \x01(\t\"^\n\x0fProductoRequest\x12\x0e\n\x06nombre\x18\x01 \x01(\t\x12\x0e\n\x06\x63odigo\x18\x02 \x01(\t\x12\r\n\x05talle\x18\x03 \x01(\t\x12\r\n\x05\x63olor\x18\x04 \x01(\t\x12\r\n\x05stock\x18\x05 \x01(\x05\"3\n\x10ProductoResponse\x12\x0f\n\x07mensaje\x18\x01 \x01(\t\x12\x0e\n\x06\x63odigo\x18\x02 \x01(\t\"g\n\x18ModificarProductoRequest\x12\x0e\n\x06nombre\x18\x01 \x01(\t\x12\x0e\n\x06\x63odigo\x18\x02 \x01(\t\x12\r\n\x05talle\x18\x03 \x01(\t\x12\r\n\x05\x63olor\x18\x04 \x01(\t\x12\r\n\x05stock\x18\x05 \x01(\x05\"#\n\x11ProductoIdRequest\x12\x0e\n\x06\x63odigo\x18\x01 \x01(\t\"V\n\x16\x42uscarProductosRequest\x12\x0e\n\x06nombre\x18\x01 \x01(\t\x12\x0e\n\x06\x63odigo\x18\x02 \x01(\t\x12\r\n\x05talle\x18\x03 \x01(\t\x12\r\n\x05\x63olor\x18\x04 \x01(\t\"=\n\x17\x42uscarProductosResponse\x12\"\n\tproductos\x18\x01 \x03(\x0b\x32\x0f.stock.Producto\"W\n\x08Producto\x12\x0e\n\x06nombre\x18\x01 \x01(\t\x12\x0e\n\x06\x63odigo\x18\x02 \x01(\t\x12\r\n\x05talle\x18\x03 \x01(\t\x12\r\n\x05\x63olor\x18\x04 \x01(\t\x12\r\n\x05stock\x18\x05 \x01(\x05\"?\n\x15\x42uscarUsuariosRequest\x12\x16\n\x0enombre_usuario\x18\x01 \x01(\t\x12\x0e\n\x06tienda\x18\x02 \x01(\t\":\n\x16\x42uscarUsuariosResponse\x12 \n\x08usuarios\x18\x01 \x03(\x0b\x32\x0e.stock.Usuario\"g\n\x07Usuario\x12\x16\n\x0enombre_usuario\x18\x01 \x01(\t\x12\x0e\n\x06nombre\x18\x02 \x01(\t\x12\x10\n\x08\x61pellido\x18\x03 \x01(\t\x12\x0e\n\x06tienda\x18\x04 \x01(\t\x12\x12\n\nhabilitado\x18\x05 \x01(\x08\":\n\x14\x42uscarTiendasRequest\x12\x0e\n\x06\x63odigo\x18\x01 \x01(\t\x12\x12\n\nhabilitada\x18\x02 \x01(\x08\"7\n\x15\x42uscarTiendasResponse\x12\x1e\n\x07tiendas\x18\x01 \x03(\x0b\x32\r.stock.Tienda\"b\n\x06Tienda\x12\x0e\n\x06\x63odigo\x18\x01 \x01(\t\x12\x11\n\tdireccion\x18\x02 \x01(\t\x12\x0e\n\x06\x63iudad\x18\x03 \x01(\t\x12\x11\n\tprovincia\x18\x04 \x01(\t\x12\x12\n\nhabilitada\x18\x05 \x01(\x08\x32\xfd\x06\n\x11StockearteService\x12=\n\x0c\x43rearUsuario\x12\x15.stock.UsuarioRequest\x1a\x16.stock.UsuarioResponse\x12>\n\x11\x41utenticarUsuario\x12\x13.stock.LoginRequest\x1a\x14.stock.LoginResponse\x12J\n\x10ModificarUsuario\x12\x1e.stock.ModificarUsuarioRequest\x1a\x16.stock.UsuarioResponse\x12:\n\x0b\x43rearTienda\x12\x14.stock.TiendaRequest\x1a\x15.stock.TiendaResponse\x12G\n\x0fModificarTienda\x12\x1d.stock.ModificarTiendaRequest\x1a\x15.stock.TiendaResponse\x12S\n\x18\x41lternarHabilitadaTienda\x12 .stock.AlternarHabilitadaRequest\x1a\x15.stock.TiendaResponse\x12@\n\rCrearProducto\x12\x16.stock.ProductoRequest\x1a\x17.stock.ProductoResponse\x12M\n\x11ModificarProducto\x12\x1f.stock.ModificarProductoRequest\x1a\x17.stock.ProductoResponse\x12\x45\n\x10\x45liminarProducto\x12\x18.stock.ProductoIdRequest\x1a\x17.stock.ProductoResponse\x12P\n\x0f\x42uscarProductos\x12\x1d.stock.BuscarProductosRequest\x1a\x1e.stock.BuscarProductosResponse\x12M\n\x0e\x42uscarUsuarios\x12\x1c.stock.BuscarUsuariosRequest\x1a\x1d.stock.BuscarUsuariosResponse\x12J\n\rBuscarTiendas\x12\x1b.stock.BuscarTiendasRequest\x1a\x1c.stock.BuscarTiendasResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,32 +47,34 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TIENDARESPONSE']._serialized_end=546
   _globals['_MODIFICARTIENDAREQUEST']._serialized_start=548
   _globals['_MODIFICARTIENDAREQUEST']._serialized_end=662
-  _globals['_PRODUCTOREQUEST']._serialized_start=664
-  _globals['_PRODUCTOREQUEST']._serialized_end=758
-  _globals['_PRODUCTORESPONSE']._serialized_start=760
-  _globals['_PRODUCTORESPONSE']._serialized_end=795
-  _globals['_MODIFICARPRODUCTOREQUEST']._serialized_start=797
-  _globals['_MODIFICARPRODUCTOREQUEST']._serialized_end=900
-  _globals['_PRODUCTOIDREQUEST']._serialized_start=902
-  _globals['_PRODUCTOIDREQUEST']._serialized_end=937
-  _globals['_BUSCARPRODUCTOSREQUEST']._serialized_start=939
-  _globals['_BUSCARPRODUCTOSREQUEST']._serialized_end=1025
-  _globals['_BUSCARPRODUCTOSRESPONSE']._serialized_start=1027
-  _globals['_BUSCARPRODUCTOSRESPONSE']._serialized_end=1088
-  _globals['_PRODUCTO']._serialized_start=1090
-  _globals['_PRODUCTO']._serialized_end=1177
-  _globals['_BUSCARUSUARIOSREQUEST']._serialized_start=1179
-  _globals['_BUSCARUSUARIOSREQUEST']._serialized_end=1242
-  _globals['_BUSCARUSUARIOSRESPONSE']._serialized_start=1244
-  _globals['_BUSCARUSUARIOSRESPONSE']._serialized_end=1302
-  _globals['_USUARIO']._serialized_start=1304
-  _globals['_USUARIO']._serialized_end=1407
-  _globals['_BUSCARTIENDASREQUEST']._serialized_start=1409
-  _globals['_BUSCARTIENDASREQUEST']._serialized_end=1467
-  _globals['_BUSCARTIENDASRESPONSE']._serialized_start=1469
-  _globals['_BUSCARTIENDASRESPONSE']._serialized_end=1524
-  _globals['_TIENDA']._serialized_start=1526
-  _globals['_TIENDA']._serialized_end=1624
-  _globals['_STOCKEARTESERVICE']._serialized_start=1627
-  _globals['_STOCKEARTESERVICE']._serialized_end=2435
+  _globals['_ALTERNARHABILITADAREQUEST']._serialized_start=664
+  _globals['_ALTERNARHABILITADAREQUEST']._serialized_end=707
+  _globals['_PRODUCTOREQUEST']._serialized_start=709
+  _globals['_PRODUCTOREQUEST']._serialized_end=803
+  _globals['_PRODUCTORESPONSE']._serialized_start=805
+  _globals['_PRODUCTORESPONSE']._serialized_end=856
+  _globals['_MODIFICARPRODUCTOREQUEST']._serialized_start=858
+  _globals['_MODIFICARPRODUCTOREQUEST']._serialized_end=961
+  _globals['_PRODUCTOIDREQUEST']._serialized_start=963
+  _globals['_PRODUCTOIDREQUEST']._serialized_end=998
+  _globals['_BUSCARPRODUCTOSREQUEST']._serialized_start=1000
+  _globals['_BUSCARPRODUCTOSREQUEST']._serialized_end=1086
+  _globals['_BUSCARPRODUCTOSRESPONSE']._serialized_start=1088
+  _globals['_BUSCARPRODUCTOSRESPONSE']._serialized_end=1149
+  _globals['_PRODUCTO']._serialized_start=1151
+  _globals['_PRODUCTO']._serialized_end=1238
+  _globals['_BUSCARUSUARIOSREQUEST']._serialized_start=1240
+  _globals['_BUSCARUSUARIOSREQUEST']._serialized_end=1303
+  _globals['_BUSCARUSUARIOSRESPONSE']._serialized_start=1305
+  _globals['_BUSCARUSUARIOSRESPONSE']._serialized_end=1363
+  _globals['_USUARIO']._serialized_start=1365
+  _globals['_USUARIO']._serialized_end=1468
+  _globals['_BUSCARTIENDASREQUEST']._serialized_start=1470
+  _globals['_BUSCARTIENDASREQUEST']._serialized_end=1528
+  _globals['_BUSCARTIENDASRESPONSE']._serialized_start=1530
+  _globals['_BUSCARTIENDASRESPONSE']._serialized_end=1585
+  _globals['_TIENDA']._serialized_start=1587
+  _globals['_TIENDA']._serialized_end=1685
+  _globals['_STOCKEARTESERVICE']._serialized_start=1688
+  _globals['_STOCKEARTESERVICE']._serialized_end=2581
 # @@protoc_insertion_point(module_scope)
