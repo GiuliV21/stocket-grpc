@@ -13,6 +13,8 @@ class StockearteService(stock_pb2_grpc.StockearteServiceServicer):
 
     def CrearUsuario(self, request, context):
         logging.debug("Received CrearUsuario request: %s", request)
+        print("Datos recibidos en el servidor:", request)  # <-- Agregar este log
+        print("Codigo de Tienda:", request.tienda)  # <-- Verificar el campo de la tienda
         try:
             with app.app_context():
                 # Busca la tienda por código
@@ -40,6 +42,7 @@ class StockearteService(stock_pb2_grpc.StockearteServiceServicer):
             context.set_details("Error al crear usuario")
             context.set_code(grpc.StatusCode.INTERNAL)
             return stock_pb2.UsuarioResponse(mensaje="Error interno del servidor")
+
 
     def AutenticarUsuario(self, request, context):
         logging.debug("Received AutenticarUsuario request: %s", request)
