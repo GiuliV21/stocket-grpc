@@ -44,21 +44,37 @@ class StockearteService(stock_pb2_grpc.StockearteServiceServicer):
             return stock_pb2.UsuarioResponse(mensaje="Error interno del servidor")
 
 
-    def AutenticarUsuario(self, request, context):
-        logging.debug("Received AutenticarUsuario request: %s", request)
-        try:
-            with app.app_context():
-                usuario = Usuario.query.filter_by(nombre_usuario=request.nombre_usuario, contrasena=request.contrasena).first()
-                if usuario:
-                    logging.info("Autenticación exitosa para usuario: %s", request.nombre_usuario)
-                    return stock_pb2.LoginResponse(mensaje="Autenticación exitosa")
-                logging.warning("Autenticación fallida para usuario: %s", request.nombre_usuario)
-                return stock_pb2.LoginResponse(mensaje="Autenticación fallida")
-        except Exception as e:
-            logging.error("Error al autenticar usuario: %s", str(e))
-            context.set_details("Error al autenticar usuario")
-            context.set_code(grpc.StatusCode.INTERNAL)
-            return stock_pb2.LoginResponse(mensaje="Error interno del servidor")
+    # def AutenticarUsuario(self, request, context):
+    #     logging.debug("Received AutenticarUsuario request: %s", request)
+    #     try:
+    #         with app.app_context():
+    #             usuario = Usuario.query.filter_by(nombre_usuario=request.nombre_usuario, contrasena=request.contrasena).first()
+    #             if usuario:
+    #                 logging.info("Autenticación exitosa para usuario: %s", request.nombre_usuario)
+    #                 return stock_pb2.LoginResponse(mensaje="Autenticación exitosa")
+    #             logging.warning("Autenticación fallida para usuario: %s", request.nombre_usuario)
+    #             return stock_pb2.LoginResponse(mensaje="Autenticación fallida")
+    #     except Exception as e:
+    #         logging.error("Error al autenticar usuario: %s", str(e))
+    #         context.set_details("Error al autenticar usuario")
+    #         context.set_code(grpc.StatusCode.INTERNAL)
+    #         return stock_pb2.LoginResponse(mensaje="Error interno del servidor")
+        def AutenticarUsuario(self, request, context):
+            logging.debug("Received AutenticarUsuario request: %s", request)
+            try:
+                with app.app_context():
+                    usuario = Usuario.query.filter_by(nombre_usuario=request.nombre_usuario, contrasena=request.contrasena).first()
+                    if usuario:
+                        logging.info("Autenticación exitosa para usuario: %s", request.nombre_usuario)
+                        return stock_pb2.LoginResponse(mensaje="Autenticación exitosa", exito=True)
+                    logging.warning("Autenticación fallida para usuario: %s", request.nombre_usuario)
+                    return stock_pb2.LoginResponse(mensaje="Autenticación fallida", exito=False)
+            except Exception as e:
+                logging.error("Error al autenticar usuario: %s", str(e))
+                context.set_details("Error al autenticar usuario")
+                context.set_code(grpc.StatusCode.INTERNAL)
+                return stock_pb2.LoginResponse(mensaje="Error interno del servidor", exito=False)
+
 
 
     def CrearTienda(self, request, context):
