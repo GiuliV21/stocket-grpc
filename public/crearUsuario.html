@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Usuario</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de incluir tus estilos -->
+</head>
+<body>
+    <h1>Crear Usuario</h1>
+    <form id="crearUsuarioForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" required>
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" required>
+        <button type="submit">Crear</button>
+    </form>
+    <p>¿Ya tienes cuenta? <a href="login.html">Iniciar sesión</a></p>
+
+    <script>
+        document.getElementById('crearUsuarioForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nuevoUsuario = {
+                nombre: document.getElementById('nombre').value,
+                usuario: document.getElementById('usuario').value,
+                contraseña: document.getElementById('contraseña').value
+            };
+
+            fetch('/crear-usuario', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(nuevoUsuario)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.mensaje);
+                window.location.href = 'login.html'; // Redirige al login después de crear el usuario
+            })
+            .catch(error => console.error('Error al crear el usuario:', error));
+        });
+    </script>
+</body>
+</html>

@@ -10,4 +10,4 @@ db.init_app(app)
 # Crea las tablas en la bd
 with app.app_context():
     db.drop_all()  # Elimina todas las tablas
-    db.create_all()  
+    db.create_all()  # las crea nuevamente
