@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
+
+
 package stock;
 
 service StockearteService {
@@ -7,6 +10,8 @@ service StockearteService {
   rpc CrearUsuario (UsuarioRequest) returns (UsuarioResponse);
   rpc AutenticarUsuario (LoginRequest) returns (LoginResponse);
   rpc ModificarUsuario (ModificarUsuarioRequest) returns (UsuarioResponse);
+  rpc ListarTiendas(Empty) returns (ListarTiendasResponse);
+
 
   // Métodos para gestionar tiendas
   rpc CrearTienda (TiendaRequest) returns (TiendaResponse);
@@ -37,6 +42,18 @@ message UsuarioResponse {
   string mensaje = 1;
 }
 
+// Mensajes para listar tiendas
+message Tienda {
+    string codigo = 1;
+    string direccion = 2;
+    string ciudad = 3;
+    string provincia = 4;
+    bool habilitada = 5;
+}
+
+message ListarTiendasResponse {
+    repeated Tienda tiendas = 1;
+}
 message ModificarUsuarioRequest {
   string nombre_usuario = 1;
   string contrasena = 2;
@@ -152,11 +169,5 @@ message BuscarTiendasResponse {
   repeated Tienda tiendas = 1;
 }
 
-message Tienda {
-  string codigo = 1;
-  string direccion = 2;
-  string ciudad = 3;
-  string provincia = 4;
-  bool habilitada = 5;
-}
+
 
