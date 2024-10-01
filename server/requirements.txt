@@ -1,0 +1,7 @@
+mysqlclient
+PyMySQL
+protobuf
+Flask==2.0.1
+Flask-SQLAlchemy==2.5.1
+grpcio==1.38.1
+grpcio-tools==1.38.1
